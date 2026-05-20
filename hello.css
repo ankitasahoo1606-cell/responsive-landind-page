@@ -1,0 +1,143 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #333;
+}
+
+/* --- Navigation Menu --- */
+#navbar {
+    position: fixed; /* Keeps the menu visible on all pages/scroll depths */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent; /* Initial styling (transparent) */
+    padding: 20px 0;
+    transition: all 0.4s ease-in-out; /* Smooth transition for styles */
+}
+
+/* JavaScript will toggle this class on scroll */
+#navbar.scrolled {
+    background-color: #1a1a2e; /* Dark background on scroll */
+    padding: 12px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Adjust logo text color if navbar turns dark/light */
+#navbar.scrolled .logo {
+    color: #ffffff;
+}
+.logo span { color: #00adb5; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+/* --- Interactive Hover Effects --- */
+.nav-links a:hover {
+    background-color: #00adb5; /* Changes background color on hover */
+    color: #ffffff;            /* Changes font color on hover */
+}
+
+/* Change link text colors on scroll if needed */
+#navbar.scrolled .nav-links a {
+    color: #eeeeee;
+}
+#navbar.scrolled .nav-links a:hover {
+    background-color: #ffffff;
+    color: #1a1a2e;
+}
+
+/* --- Landing Page Content Sections --- */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #1f4068, #162447);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.content-section {
+    padding: 100px 30px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.gray-bg {
+    background-color: #f4f6f9;
+    max-width: 100%;
+}
+
+/* --- Responsiveness (Mobile View) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #navbar {
+        background-color: #1a1a2e; /* Defaults to a solid color on mobile screens */
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 32px;
+    }
+}
